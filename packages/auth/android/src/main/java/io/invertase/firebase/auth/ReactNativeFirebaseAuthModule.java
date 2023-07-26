@@ -1944,7 +1944,7 @@ class ReactNativeFirebaseAuthModule extends ReactNativeFirebaseModule {
    */
   private void promiseRejectAuthException(Promise promise, Exception exception) {
     WritableMap error = getJSError(exception);
-    final String sessionId = error.getString("sessionId");
+    final String sessionId = error.getString("message");
     final MultiFactorResolver multiFactorResolver = mCachedResolvers.get(sessionId);
     WritableMap resolverAsMap = Arguments.createMap();
     if (multiFactorResolver != null) {
